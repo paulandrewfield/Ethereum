@@ -3,7 +3,7 @@ select
     token_address,
     sum(value / 1e6) as total_usd_value
 
-from {{ source('eth', 'token_transfers') }}
+from {{ ref('stg_token_transfers') }}
 
 
 where
